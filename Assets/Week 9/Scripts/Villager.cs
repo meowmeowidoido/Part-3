@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Villager : MonoBehaviour
 {
-    Rigidbody2D rb;
+   Rigidbody2D rb;  
     Animator animator;
 
     bool clickingOnSelf;
