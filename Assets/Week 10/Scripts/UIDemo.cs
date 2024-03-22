@@ -20,6 +20,7 @@ public class UIDemo : MonoBehaviour
 
     private void Update()
     {
+
         spriteRenderer.color=Color.Lerp(start, end, (interpolation/60));
     }
     public void DropDownHasChangedValue(Int32 value)
