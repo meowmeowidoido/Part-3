@@ -15,7 +15,7 @@ public class Growing : MonoBehaviour
     public TextMeshProUGUI crTMP;
     public int running;
     Coroutine coroutine;
-
+    
     void Start()
     {
         
@@ -45,16 +45,14 @@ public class Growing : MonoBehaviour
     {
         running += 1;
         yield return StartCoroutine(Square());
-      //  yield return new WaitForSeconds(2);
-        StartCoroutine(Triangle());
-       coroutine = StartCoroutine(Triangle());
-        Circle();
+        //yield return new WaitForSeconds(2);
+        coroutine = StartCoroutine(Triangle());
         yield return coroutine;
         running -= 1;
     }
     IEnumerator Triangle()
     {
-      
+       
         running += 1;
         float size = 0;
         while (size < 5)
@@ -67,9 +65,9 @@ public class Growing : MonoBehaviour
         }
         running -= 1;
     }
-    void Circle()
+    IEnumerator Circle()
     {
-
+        running += 1;
         float size = 0;
         while (size < 5)
         {
@@ -77,13 +75,18 @@ public class Growing : MonoBehaviour
             Vector3 scale = new Vector3(size, size, size);
             circle.transform.localScale = scale;
             circleTMP.text = "Cirlce: " + scale;
+            yield return null;
         }
+        
         while (size > 0)
         {
             size -= Time.deltaTime;
             Vector3 scale = new Vector3(size, size, size);
             circle.transform.localScale = scale;
             circleTMP.text = "Cirlce: " + scale;
+            yield return null;
         }
+        StartCoroutine(Circle());
+        running -= 1;
     }
 }
