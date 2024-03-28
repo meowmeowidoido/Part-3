@@ -27,7 +27,7 @@ public class FlightControl : MonoBehaviour
         coroutine = StartCoroutine(RunLeg(length));
     }
 
-    IEnumerator RunLeg(float legLength)
+    public IEnumerator RunLeg(float legLength)
     {
         float time = 0;
         while (time < legLength)
@@ -38,7 +38,7 @@ public class FlightControl : MonoBehaviour
         }
     }
 
-    IEnumerator Turn(float turn)
+    public IEnumerator Turn(float turn)
     {
         float interpolation = 0;
         Quaternion currentHeading = missile.transform.rotation;
