@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
-    Rigidbody2D playerRB;
+    public Rigidbody2D playerRB;
     public float speed = 15;
-    Vector2 moving;
-    public float jumpPower;
-    bool grounded = true;
-    Coroutine jumping;
+    protected Vector2 moving;
+    public  float jumpPower;
+    public bool grounded = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +18,7 @@ public class BasicMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         moving.x = Input.GetAxis("Horizontal");
 
@@ -28,29 +27,29 @@ public class BasicMovement : MonoBehaviour
             
             grounded = false;
 
-            jumpPower = 2300;
+            jumpPower = 2500; 
 
            
         }
 
-        if(grounded == false && jumpPower >0)
+        if(grounded == false)
         {
-            jumpPower -= 2;
+            jumpPower -= 5;
         }
         if(grounded == true && jumpPower > 0)
         {
-            jumpPower -= 2;
+            jumpPower -=1;
         }
 
 
 
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
 
         playerRB.MovePosition(playerRB.position + (moving * speed * Time.deltaTime));
-        playerRB.AddForce(Vector2.up * jumpPower * speed * Time.deltaTime);
+        playerRB.AddForce(Vector2.up  * jumpPower * speed * Time.deltaTime);
 
 
 
