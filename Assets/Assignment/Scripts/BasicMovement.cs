@@ -32,13 +32,13 @@ public class BasicMovement : MonoBehaviour
            
         }
 
-        if(grounded == false)
+        if(grounded == false && jumpPower >-1000)
         {
             jumpPower -= 5;
         }
         if(grounded == true && jumpPower > 0)
         {
-            jumpPower -=1;
+            jumpPower -=5;
         }
 
 

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class FlyingMovement : BasicMovement
 {
-
+    
     public float energy = 5;
     public float flyPower;
     public bool inFlight = false;
@@ -13,7 +13,7 @@ public class FlyingMovement : BasicMovement
     {
         
         base.Update();
-
+      
         jumpPower=0;
         if (Input.GetKeyDown(KeyCode.W) && energy>0)
         {
