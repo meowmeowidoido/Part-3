@@ -18,7 +18,7 @@ public class FlyingMovement : BasicMovement
         if (Input.GetKeyDown(KeyCode.W) && energy>0)
         {
             inFlight = true;
-            flyPower = 20000;  
+            flyPower = 700;  
 
         }
         if (Input.GetKeyUp(KeyCode.W) || inFlight == false)
@@ -47,7 +47,7 @@ public class FlyingMovement : BasicMovement
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        playerRB.AddForce(playerRB.position + Vector2.up * flyPower * Time.deltaTime);
+        playerRB.AddForce(playerRB.position + Vector2.up * flyPower);
 
     }
 

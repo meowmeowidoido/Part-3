@@ -27,18 +27,26 @@ public class BasicMovement : MonoBehaviour
             
             grounded = false;
 
-            jumpPower = 2500; 
+            jumpPower = 70;
 
            
         }
 
-        if(grounded == false && jumpPower >-1000)
+        if(grounded == false && jumpPower >-200)
         {
-            jumpPower -= 5;
+            jumpPower -= 200 *( 1f *Time.deltaTime);
+          
         }
-        if(grounded == true && jumpPower > 0)
+        if(grounded == true && jumpPower > 1 )
         {
-            jumpPower -=5;
+            jumpPower -= 200* (1f * Time.deltaTime);
+           
+         
+            
+        }
+        if (grounded==true & jumpPower<0)
+        {
+            jumpPower = 0;
         }
 
 
@@ -49,7 +57,7 @@ public class BasicMovement : MonoBehaviour
     {
 
         playerRB.MovePosition(playerRB.position + (moving * speed * Time.deltaTime));
-        playerRB.AddForce(Vector2.up  * jumpPower * speed * Time.deltaTime);
+        playerRB.AddForce(Vector2.up  * jumpPower * speed );
 
 
 
