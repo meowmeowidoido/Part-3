@@ -36,7 +36,7 @@ public class DuckMovement : BasicMovement
             boolEnlarge=false;
             
             speed = 10f;
-            jumpPower = 2500;
+            jumpPower = 70;
             powerStartup = 0;
             if (enlargeOn != null)
             {
@@ -120,7 +120,7 @@ public class DuckMovement : BasicMovement
     {
         boolShrink= false;
         speed = 10f;
-        jumpPower = 2500;
+        jumpPower = 70;
         powerStartup = 0; 
        if (shrinkingOn != null)
         {
