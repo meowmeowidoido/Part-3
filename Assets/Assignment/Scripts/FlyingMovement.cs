@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class FlyingMovement : BasicMovement
 {
     //initializing variables 
-    public float energy = 5;
-    public float flyPower;
-    public bool inFlight = false;
-    public Slider energyBar;
+    public float energy = 5;//used for energy and how long they can fly for
+    public float flyPower;//flyPower intensity of flying up
+    public bool inFlight = false;//detects whether player is in flightmode
+    public Slider energyBar;//UI for energy and a bar
     //overriding update function from parent class
     protected override void Update()
     {
@@ -51,6 +51,11 @@ public class FlyingMovement : BasicMovement
         if (grounded == false && energy >0)
         {
             energy -= 1* Time.deltaTime;
+        }
+
+        if (energy < 0)
+        {
+            energy = 0;
         }
         //if the player is grounded restore energy by a second.
         // Max energy is five seconds.

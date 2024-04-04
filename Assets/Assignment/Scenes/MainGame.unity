@@ -2658,7 +2658,7 @@ MonoBehaviour:
   speed: 10
   jumpPower: 0
   grounded: 1
-  energy: 10
+  energy: 5
   flyPower: 0
   inFlight: 0
   energyBar: {fileID: 318728383}
@@ -3789,6 +3789,10 @@ PrefabInstance:
       propertyPath: ghost
       value: 
       objectReference: {fileID: 1253366548591196614, guid: 57142ebaeab094ea9a86c9e6693d5f89, type: 3}
+    - target: {fileID: 9082877882975627669, guid: 57142ebaeab094ea9a86c9e6693d5f89, type: 3}
+      propertyPath: energy
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9082877882975627669, guid: 57142ebaeab094ea9a86c9e6693d5f89, type: 3}
       propertyPath: energyBar
       value: 
